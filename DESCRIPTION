@@ -1,7 +1,7 @@
 Package: DUBStepR
 Type: Package
 Title: Correlation-Based Feature Selection for Single-Cell RNA Sequencing Data
-Version: 1.1.2
+Version: 1.2.0
 Authors@R: c(person("Bobby", "Ranjan", email = "ranjan_bobby@gis.a-star.edu.sg", role = c("aut", "cre")), person("Kunal", "Mishra", email = "kunal006@e.ntu.edu.sg", role = "ctb"), person("Shyam", "Lab", email = "shyam_lab@gis.a-star.edu.sg", role = c("cph")), person("Bryan", "Hanson", email = "hanson@depauw.edu", role = "ctb"), person("Damian", "Coventry", email = "", role = "ctb"), person("Brandon", "Crosby", email = "", role = "ctb"), person("Gregoire", "Thomas", email = "", role = "ctb"))
 Maintainer: Bobby Ranjan <ranjan_bobby@gis.a-star.edu.sg>
 Description: Determining the optimal set of feature genes to characterise cell types in single-cell RNA sequencing data using stepwise regression on gene-gene correlations. <doi:10.1101/2020.10.07.330563>.
