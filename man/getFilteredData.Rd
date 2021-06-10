@@ -4,12 +4,14 @@
 \alias{getFilteredData}
 \title{Filter the dataset by removing lowly expressed genes and mitochondrial, spike-in and ribosomal genes}
 \usage{
-getFilteredData(data, min.cells = 0.05 * ncol(data))
+getFilteredData(data, min.cells = 0.05 * ncol(data), species = "human")
 }
 \arguments{
 \item{data}{gene expression matrix}
 
 \item{min.cells}{gene expression matrix}
+
+\item{species}{species to use for gene filtering: "human" (default), "mouse" and "rat"}
 }
 \value{
 filtered gene-expression matrix

@@ -7,6 +7,7 @@
 DUBStepR(
   input.data,
   min.cells = 0.05 * ncol(input.data),
+  species = "human",
   optimise.features = TRUE,
   k = 10,
   num.pcs = 20,
@@ -16,15 +17,17 @@ DUBStepR(
 \arguments{
 \item{input.data}{input gene expression matrix (genes x cells)}
 
-\item{min.cells}{minimum number of cells to filter genes out and smooth data over}
+\item{min.cells}{minimum number of cells to filter genes out}
 
-\item{optimise.features}{Determine optimal feature set using density index.}
+\item{species}{species to use for gene filtering: "human" (default), "mouse" and "rat"}
 
-\item{k}{number of nearest neighbours. Default is 10.}
+\item{optimise.features}{Determine optimal feature set using density index}
 
-\item{num.pcs}{number of principal components to represent sc data. Default is 20.}
+\item{k}{number of nearest neighbours. Default is 10}
 
-\item{error}{Acceptable error margin for kNN computation. Default is 0, but is set to 1 for large datasets.}
+\item{num.pcs}{number of principal components to represent sc data. Default is 20}
+
+\item{error}{Acceptable error margin for kNN computation. Default is 0, but is set to 1 for large datasets}
 }
 \value{
 Returns optimal feature set

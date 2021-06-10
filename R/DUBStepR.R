@@ -1,11 +1,12 @@
 #' @author ranjanb
 #' @title DUBStepR - Obtain a list of feature genes to characterise cell types
 #' @param input.data input gene expression matrix (genes x cells)
-#' @param min.cells minimum number of cells to filter genes out and smooth data over
-#' @param optimise.features Determine optimal feature set using density index.
-#' @param k number of nearest neighbours. Default is 10.
-#' @param num.pcs number of principal components to represent sc data. Default is 20.
-#' @param error Acceptable error margin for kNN computation. Default is 0, but is set to 1 for large datasets.
+#' @param min.cells minimum number of cells to filter genes out
+#' @param species species to use for gene filtering: "human" (default), "mouse" and "rat"
+#' @param optimise.features Determine optimal feature set using density index
+#' @param k number of nearest neighbours. Default is 10
+#' @param num.pcs number of principal components to represent sc data. Default is 20
+#' @param error Acceptable error margin for kNN computation. Default is 0, but is set to 1 for large datasets
 #' @return Returns optimal feature set
 #'
 #' @importClassesFrom Matrix dgCMatrix
@@ -14,14 +15,14 @@
 #' 
 #' @export
 #'
-DUBStepR <- function(input.data, min.cells = 0.05*ncol(input.data), optimise.features = TRUE, k = 10, num.pcs = 20, error = 0) {
+DUBStepR <- function(input.data, min.cells = 0.05*ncol(input.data), species = "human", optimise.features = TRUE, k = 10, num.pcs = 20, error = 0) {
     
     # Message
     message(" ")
     message("Running DUBStepR...")
     
     # Filter genes
-    filt.data <- getFilteredData(data = input.data, min.cells = min.cells)
+    filt.data <- getFilteredData(data = input.data, min.cells = min.cells, species = species)
     
     # Compute gene-gene correlation matrix
     ggc.out <- getGGC(data = filt.data)
